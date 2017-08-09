@@ -2,7 +2,7 @@
 
 - name: NVM | main | Install Required Packages
   action: "{{ ansible_pkg_mgr }} name={{ item }} state=present"
-  with_items: required_packages|default([ansible_pkg_mgr])
+  with_items: "{{ required_packages }}"
 
 - include: nvm.yml
 
